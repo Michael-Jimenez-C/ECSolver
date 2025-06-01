@@ -13,10 +13,18 @@ authors = [
 license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.12"
+dependencies = [
+    "lark>=1.2.2",
+]
 
 [build-system]
 requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
 
 [project.scripts]
 excel-solver-cli = "solver.solver:main"
