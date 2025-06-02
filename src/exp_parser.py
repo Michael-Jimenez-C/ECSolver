@@ -2,8 +2,8 @@ from rules import rules
 from lark import Lark
 
 class Parser:
-    def __init__(self, grammar):
-        self.parser = Lark(grammar, start='start')
+    def __init__(self):
+        self.parser = Lark(rules, start='start')
     
     @staticmethod
     def tree_to_dict(tree):
