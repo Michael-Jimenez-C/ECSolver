@@ -16,4 +16,4 @@ class Parser:
             return str(tree)
 
     def parse(self, formula):
-        return Parser.tree_to_dict(self.parser.parse(formula))
+        return self.parser.parse(formula)

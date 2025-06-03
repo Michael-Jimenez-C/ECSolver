@@ -10,21 +10,26 @@ start: expr
      | term "/" factor   -> div
      | factor
 
-?factor: function_call
+?factor: "-" factor     -> neg
+       | "+" factor     -> pos
+       | function_call
        | cell_range
        | cell
        | NUMBER          -> number
        | "(" expr ")"
 
+
+
 function_call: NAME "(" function_args? ")"     -> func_call
 ?function_args: expr_or_range (";" expr_or_range)*
 
 ?expr_or_range: cell_range
-              | cell
               | NUMBER
               | expr
 
 cell_range: cell ":" cell            -> cell_range
+          | cell                     -> cell_range
+          
 cell: /[A-Z]+\d+/                    -> cell
 
 %import common.CNAME -> NAME
