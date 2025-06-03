@@ -15,6 +15,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "lark>=1.2.2",
+    "numpy>=2.2.6",
 ]
 
 [build-system]
