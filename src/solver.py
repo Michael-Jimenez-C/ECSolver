@@ -1,8 +1,9 @@
 from lark import Transformer
 
 class Evaluator(Transformer):
-    def __init__(self, sheet_connector=None):
+    def __init__(self, sheet_connector=None, functions={}):
         self.sheet_connector = sheet_connector
+        self.functions = functions
 
     def number(self, args):
         return float(args[0])
@@ -20,17 +21,19 @@ class Evaluator(Transformer):
             return self.sheet_connector.get_range(start, end)
 
     def func_call(self, args):
-        name = str(args[0])
+        name = str(args[0]).upper()
         arguments = args[1:]
-        if name.upper() == "SUM":
-            values = []
-            for arg in arguments:
-                if isinstance(arg, list):
-                    values.extend(arg)
-                else:
-                    values.append(arg)
-            return sum(values)
-        raise ValueError(f"Función desconocida: {name}")
+        if len(arguments) == 1 and isinstance(arguments[0], list):
+            arguments = arguments[0]
+        if name in self.functions:
+            func = self.functions[name][0]
+            if callable(func):
+                return func(*arguments)
+            else:
+                raise ValueError(f"Function {name} is not callable.")
+    
+    def function_args(self, args):
+        return args
 
     def add(self, args):
         return args[0] + args[1]
