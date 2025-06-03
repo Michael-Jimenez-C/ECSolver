@@ -31,11 +31,11 @@ excel-solver/
 
 ## ⚡ Funcionalidades del Proyecto
 
-- [ ] **Parser de fórmulas**: Analizar y parsear ecuaciones de celdas
-- [ ] **Evaluador de expresiones**: Resolver operaciones matemáticas básicas
-- [ ] **Gestión de dependencias**: Identificar relaciones entre celdas
+- [x] **Parser de fórmulas**: Analizar y parsear ecuaciones de celdas
+- [x] **Evaluador de expresiones**: Resolver operaciones matemáticas básicas
+- [x] **Gestión de dependencias**: Identificar relaciones entre celdas
 - [ ] **Solver iterativo**: Resolver sistemas de ecuaciones
-- [ ] **Mostrar resultados**: Visualizar soluciones por consola
+- [x] **Mostrar resultados**: Visualizar soluciones por consola
 - [ ] **Validación de entrada**: Verificar formato de ecuaciones
 
 ---
