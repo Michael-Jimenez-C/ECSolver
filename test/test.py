@@ -1,5 +1,5 @@
-from src.solver import Evaluator
-from src.exp_parser import Parser
+from ecsolver.solver import Evaluator
+from ecsolver.exp_parser import Parser
 
 def test_solver_maths():
     p = Parser()

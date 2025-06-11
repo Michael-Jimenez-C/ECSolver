@@ -1,7 +1,7 @@
-from src.solver import Evaluator
-from src.exp_parser import Parser
+from ecsolver.solver import Evaluator
+from ecsolver.exp_parser import Parser
 import numpy as np
-from src.sheet_connector import TestSheetConnector
+from ecsolver.sheet_connector import TestSheetConnector
     
 
 def test_solver_cell_range():

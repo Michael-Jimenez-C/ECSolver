@@ -1,5 +1,5 @@
-from src.logic import Logic
-from src.sheet_connector import TestSheetConnector
+from ecsolver.logic import Logic
+from ecsolver.sheet_connector import TestSheetConnector
 import numpy as np
 
 
