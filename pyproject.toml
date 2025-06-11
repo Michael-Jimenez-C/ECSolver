@@ -1,6 +1,6 @@
 [project]
 
-name = "excel-solver"
+name = "ecsolver"
 version = "0.1.0"
 description = "Utilidad de solver para el proyecto de Excel"
 
