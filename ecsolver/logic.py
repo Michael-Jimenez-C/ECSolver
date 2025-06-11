@@ -1,7 +1,7 @@
 import importlib
 import inspect
-from solver import Evaluator
-from exp_parser import Parser
+from .solver import Evaluator
+from .exp_parser import Parser
 
 
 def get_module_functions(module_name):
@@ -18,7 +18,7 @@ def get_module_functions(module_name):
 
 class Logic:
     def __init__(self, sheet_connector = {}):
-        functions = get_module_functions("basic")
+        functions = get_module_functions("ecsolver.basic")
         self.solv = Evaluator(sheet_connector, functions)
 
     def add_function(self, functions = {}):

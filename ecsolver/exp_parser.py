@@ -1,4 +1,4 @@
-from rules import rules
+from .rules import rules
 from lark import Lark
 
 class Parser:
